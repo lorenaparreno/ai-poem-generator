@@ -5,12 +5,12 @@ function displayPoem(response) {
         autoStart: true,
         delay: 1,
         cursor: "",
-      });
+    });
 }
 
 function generatePoem(event) {
-    event.preventDefault ();
-    
+    event.preventDefault();
+
     let instructionsInput = document.querySelector("#user-instructions");
     let apiKey = "130f33ffoc5t4fdc244afb86281fdf02";
     let prompt = `User's instructions: Generate a poem about ${instructionsInput.value}`;
@@ -22,7 +22,7 @@ function generatePoem(event) {
     console.log(`Context: ${context}`);
 
     axios.get(apiURL).then(displayPoem);
-}    
+}
 
-    let poemFormElement = document.querySelector("#poem-generator-form");
-    poemFormElement.addEventListener("submit", generatePoem);
+let poemFormElement = document.querySelector("#poem-generator-form");
+poemFormElement.addEventListener("submit", generatePoem);
